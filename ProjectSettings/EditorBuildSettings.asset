@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
+    path: Assets/MenuScenes/Levels/loader.unity
+    guid: 92c383c63a1e7db19819116bfd9b6324
+  - enabled: 1
     path: Assets/MenuScenes/Levels/Norte Nordeste.unity
     guid: c9b62c3c8b75160b6990ab9e8791e965
   - enabled: 1

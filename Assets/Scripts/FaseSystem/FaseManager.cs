@@ -21,6 +21,7 @@ public class FaseManager : MonoBehaviour
         if (instance != null)
         {
             Destroy(gameObject);
+            Debug.LogError("Mais de um FaseManager na cena!");
             return;
         }
         instance = this;
@@ -53,15 +54,26 @@ public class FaseManager : MonoBehaviour
 
     public void RegistrarObservacao(string nomeObservacao)
     {
+        // LOG #1: Este log deve aparecer SEMPRE que o botão for clicado.
+        Debug.Log($"[FaseManager] Tentativa de registrar observação recebida: '{nomeObservacao}'");
+
         string obsKey = nomeObservacao.ToLower();
 
         if (observacoesConcluidas.ContainsKey(obsKey) && !observacoesConcluidas[obsKey])
         {
+            // LOG #2: Este log SÓ VAI APARECER se a observação for válida e registrada com sucesso.
+            Debug.Log($"[FaseManager] Observação '{obsKey}' é VÁLIDA. Registrando e disparando evento!");
+
             observacoesConcluidas[obsKey] = true;
-            Debug.Log($"Observação registrada: {obsKey}");
-            OnObservacaoRegistrada?.Invoke(obsKey, true);
+            OnObservacaoRegistrada?.Invoke(obsKey, true); // O evento é disparado aqui!
+
+
         }
-        Debug.Log($"<color=orange>EVENTO 'OnObservacaoRegistrada' DISPARADO para: {obsKey}</color>");
+        else
+        {
+            // LOG #3: Se a observação não for válida (typo?) ou já tiver sido feita, este log aparecerá.
+            Debug.LogWarning($"[FaseManager] A observação '{obsKey}' não pôde ser registrada. Ela existe na FaseData? Já foi concluída?");
+        }
     }
 
     public bool TodasObservacoesFeitas()
