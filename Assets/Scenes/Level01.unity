@@ -1066,6 +1066,7 @@ GameObject:
   - component: {fileID: 469634356}
   - component: {fileID: 469634355}
   - component: {fileID: 1967428132}
+  - component: {fileID: 1967428134}
   m_Layer: 5
   m_Name: NDVI Button
   m_TagString: Untagged
@@ -1725,7 +1726,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 39303281}
   m_OnClick:
     m_PersistentCalls:
@@ -1863,7 +1864,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 804664882}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1346168659}
+        m_TargetAssemblyTypeName: CenasG, Assembly-CSharp
+        m_MethodName: CarregarCena
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Norte Nordeste
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &804664882
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2693,6 +2706,7 @@ RectTransform:
   m_Children:
   - {fileID: 322210462}
   - {fileID: 804664880}
+  - {fileID: 1346168658}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -2700,6 +2714,54 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &1346168657
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1346168658}
+  - component: {fileID: 1346168659}
+  m_Layer: 5
+  m_Name: CenaG
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1346168658
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1346168657}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1315945548}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1346168659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1346168657}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00ca0720c1ab3d2d6b34aa515f95fde2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CenasG
 --- !u!1 &1378254276
 GameObject:
   m_ObjectHideFlags: 0
@@ -3332,6 +3394,7 @@ GameObject:
   - component: {fileID: 1778858295}
   - component: {fileID: 1778858294}
   - component: {fileID: 1967428131}
+  - component: {fileID: 1967428133}
   m_Layer: 5
   m_Name: Fire Button
   m_TagString: Untagged
@@ -3672,7 +3735,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 22ba4709e3d7444b8180c579244b5ced, type: 3}
   m_Name: 
-  m_EditorClassIdentifier:
+  m_EditorClassIdentifier: 
   regionLoader: {fileID: 1092315734}
   selectable: {fileID: 786417184}
   overlayGroupIndex: 0
@@ -3701,7 +3764,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 22ba4709e3d7444b8180c579244b5ced, type: 3}
   m_Name: 
-  m_EditorClassIdentifier:
+  m_EditorClassIdentifier: 
   regionLoader: {fileID: 1092315734}
   selectable: {fileID: 1778858294}
   overlayGroupIndex: 1
@@ -3730,7 +3793,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 22ba4709e3d7444b8180c579244b5ced, type: 3}
   m_Name: 
-  m_EditorClassIdentifier:
+  m_EditorClassIdentifier: 
   regionLoader: {fileID: 1092315734}
   selectable: {fileID: 469634355}
   overlayGroupIndex: 2
@@ -3748,6 +3811,32 @@ MonoBehaviour:
   inactiveBackgroundColor: {r: 0.6, g: 0.6, b: 0.6, a: 1}
   activeTextColor: {r: 0, g: 0, b: 0, a: 1}
   inactiveTextColor: {r: 0.6, g: 0.6, b: 0.6, a: 1}
+--- !u!114 &1967428133
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1778858292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5fccc5269edff3d7adcc4d3e8c0a4dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BotaoObservacao
+  nomeDaObservacao: fogo
+--- !u!114 &1967428134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 469634353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5fccc5269edff3d7adcc4d3e8c0a4dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BotaoObservacao
+  nomeDaObservacao: vegetacao
 --- !u!1 &1997384281
 GameObject:
   m_ObjectHideFlags: 0

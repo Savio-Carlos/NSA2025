@@ -18,8 +18,14 @@ public class DialogueManager : MonoBehaviour
 
     private void Awake()
     {
-        if (instance != null) { Debug.LogError("Mais de um DialogueManager na scene!"); }
+        if (instance != null)
+        {
+            Debug.LogError("Mais de um DialogueManager na scene!");
+            Destroy(gameObject);
+            return;
+        }
         instance = this;
+        DontDestroyOnLoad(gameObject);
     }
 
     private void OnEnable()

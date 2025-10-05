@@ -1,0 +1,76 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 225c7a769a84453498493cb0f22a59f7, type: 3}
+  m_Name: RegionLevel
+  m_EditorClassIdentifier: Assembly-CSharp::RegionLevel
+  regionName: BR-Region-Fase2
+  areaRef: Area10km
+  terrainData: {fileID: 15600000, guid: a204fc138ecfee620bfb29b26a74f275, type: 2}
+  terrainSizeMeters: {x: 63896.684, y: 1000, z: 63977.83}
+  rawNormalizedToHeight: 1
+  overlayGroups:
+  - groupName: Natural Color
+    icon: {fileID: 0}
+    layers:
+    - texture: {fileID: 2800000, guid: c313d5a2068915bcfaf7a227dc71923f, type: 3}
+      day: 1
+      month: 1
+      year: 2000
+    defaultLayerIndex: 0
+    legacyLayers: []
+  - groupName: Flood
+    icon: {fileID: 21300000, guid: a86bfe716c3411a4a80d13cd150fad2e, type: 3}
+    layers:
+    - texture: {fileID: 2800000, guid: 8d66a0823c91950f18723200993bf824, type: 3}
+      day: 1
+      month: 6
+      year: 2024
+    - texture: {fileID: 2800000, guid: 2a532a18560e062538710fbcb24a2652, type: 3}
+      day: 1
+      month: 5
+      year: 2024
+    - texture: {fileID: 2800000, guid: d343ac8bf912c66c3820a79022a95e95, type: 3}
+      day: 1
+      month: 5
+      year: 2025
+    defaultLayerIndex: 0
+    legacyLayers: []
+  - groupName: NDVI
+    icon: {fileID: 21300000, guid: 024ae74f0ff0342499e703818b74ecef, type: 3}
+    layers:
+    - texture: {fileID: 2800000, guid: f6c8641c7a6ed37b6880d0c794f50a4a, type: 3}
+      day: 1
+      month: 6
+      year: 2024
+    - texture: {fileID: 2800000, guid: 1185c6b78eb4e493d92f8d48dad68943, type: 3}
+      day: 1
+      month: 5
+      year: 2024
+    - texture: {fileID: 2800000, guid: c4a0fb51c2bce3cbfab8602a5e0b4f76, type: 3}
+      day: 1
+      month: 5
+      year: 2025
+    defaultLayerIndex: 0
+    legacyLayers: []
+  defaultGroupIndex: 0
+  overlaysLegacy: []
+  defaultOverlayIndexLegacy: 0
+  overlayTilingMeters: {x: 63896.684, y: 63977.83}
+  mapMarkers:
+  - displayName: Farm
+    normalizedX: 0.5
+    normalizedZ: 0.5
+    heightOffsetMeters: 3000
+    icon: {fileID: 21300000, guid: 8af1b59e3001ac3419a5dddb5bebb001, type: 3}
+    worldSizeMeters: {x: 7000, y: 7000}
+  zMinMeters: 0
+  zMaxMeters: 1000

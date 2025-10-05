@@ -8,14 +8,16 @@ public class GameEventsManager : MonoBehaviour
 
     public DialogueEvents DialogueEvents;
 
-    private void Awake()
+private void Awake()
+{
+    if (instance != null)
     {
-        if (instance != null)
-        {
-            Debug.LogError("Mais de um game GameEvents na scene");
-        }
-        instance = this;
-
-        DialogueEvents = new DialogueEvents();
+        Debug.LogError("Mais de um game GameEvents na scene");
+        Destroy(gameObject);
+        return;
     }
+    instance = this;
+    DontDestroyOnLoad(gameObject);
+    DialogueEvents = new DialogueEvents();
+}
 }

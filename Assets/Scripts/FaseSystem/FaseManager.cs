@@ -24,6 +24,7 @@ public class FaseManager : MonoBehaviour
             return;
         }
         instance = this;
+        DontDestroyOnLoad(gameObject);
     }
 
     void Start()
@@ -68,7 +69,18 @@ public class FaseManager : MonoBehaviour
         if (observacoesConcluidas == null || observacoesConcluidas.Count == 0) return false;
         return observacoesConcluidas.All(kvp => kvp.Value);
     }
+    public bool ChecarObservacao(string nomeObservacao)
+    {
+        string obsKey = nomeObservacao.ToLower();
 
+        if (observacoesConcluidas.ContainsKey(obsKey))
+        {
+            return observacoesConcluidas[obsKey];
+        }
+
+        Debug.LogWarning($"Tentativa de checar uma observação ('{nomeObservacao}') que não existe na lista da FaseData atual.");
+        return false;
+    }
     public void MudarEstado(FaseState novoEstado)
     {
         if (estadoAtual == novoEstado) return;
