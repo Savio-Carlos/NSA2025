@@ -9,23 +9,32 @@ EditorBuildSettings:
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
+    path: Assets/MenuScenes/FilterShow.unity
+    guid: cab1c9f145bd1a2babddbb245a4fc2eb
+  - enabled: 1
+    path: Assets/MenuScenes/LevelSelection.unity
+    guid: 55674728f0cd71946b85f5047403172f
+  - enabled: 1
     path: Assets/MenuScenes/Levels/loader.unity
     guid: 92c383c63a1e7db19819116bfd9b6324
   - enabled: 1
     path: Assets/MenuScenes/Levels/Norte Nordeste.unity
     guid: c9b62c3c8b75160b6990ab9e8791e965
   - enabled: 1
-    path: Assets/Scenes/Level01.unity
-    guid: 704372dd1dd0fe3fcbba482ff89352e4
-  - enabled: 1
     path: Assets/MenuScenes/Levels/Sul.unity
     guid: 54485126369bc8c4dadfb426e3612ecc
   - enabled: 1
-    path: Assets/MenuScenes/FilterShow.unity
-    guid: cab1c9f145bd1a2babddbb245a4fc2eb
+    path: Assets/MenuScenes/Levels/Centro Oeste.unity
+    guid: 452fc7711a08e176ba1d71161ccab974
   - enabled: 1
-    path: Assets/MenuScenes/LevelSelection.unity
-    guid: 55674728f0cd71946b85f5047403172f
+    path: Assets/Scenes/Level01.unity
+    guid: 704372dd1dd0fe3fcbba482ff89352e4
+  - enabled: 1
+    path: Assets/Scenes/Level02.unity
+    guid: a1e267feed00e000689591c08515279e
+  - enabled: 1
+    path: Assets/Scenes/Level03.unity
+    guid: 96049afed413e6d49984ead8630c6aeb
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0

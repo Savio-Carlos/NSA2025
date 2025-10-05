@@ -3,7 +3,7 @@
 VAR fase_status = "Inicio" 
 // 2. Variáveis booleanas para cada descoberta (controladas pelo C#)
 VAR encontrou_vegetacao = false
-VAR encontrou_enchente = false
+VAR encontrou_umidade = false
 
 === Fazendeiro ===
 
@@ -44,9 +44,9 @@ E então? O que o bicho lá de cima disse?
 + Ainda não encontrei nada senhor. -> DONE
 + {encontrou_vegetacao} > Mostrar a diferença de vegetação entre a lavoura e a margem do rio.
 -> dialogo_vegetacao
-+ {encontrou_enchente} > Falar sobre a mancha de inundação e como ela avançou.-> dialogo_enchente
++ {encontrou_umidade} > Falar sobre a mancha de inundação e como ela avançou.-> dialogo_umidade
 // Esta escolha só aparece quando TODAS as observações forem verdadeiras
-* {encontrou_vegetacao and encontrou_enchente} > Conectar a falta de mata ciliar com o caminho da enchente e a vulnerabilidade da lavoura. -> dialogo_final
+* {encontrou_vegetacao and encontrou_umidade} > Conectar a falta de mata ciliar com o caminho da enchente e a vulnerabilidade da lavoura. -> dialogo_final
 -> END
 
 = final
@@ -73,7 +73,7 @@ Eu também verifiquei os registros de focos de calor e, como esperado para a sua
 Isso mesmo. Fogo aqui, só na churrasqueira. Na lavoura de arroz, a gente não usa fogo pra nada. O nosso trabalho é com a terra e com a água.
 -> END
 
-=== dialogo_enchente ===
+=== dialogo_umidade ===
 # speaker: Inspetor 
 Seu Lauro, olhando as imagens da enchente de maio do ano passado e a simulação para este ano, vemos que a água não sobe de forma uniforme. Ela avança com mais força por essa faixa aqui, ao longo da margem, antes de se espalhar pelo resto da lavoura. É como se houvesse um caminho preferencial para a inundação. O senhor reconhece esse padrão?
 #speaker: Fazendeiro

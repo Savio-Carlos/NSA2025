@@ -85,6 +85,17 @@ Será que essa prática de usar o fogo para limpar o terreno todo ano não é ju
 Rapaz, a gente sempre faz a queima. É o jeito de limpar tudo e preparar para a nova semente. A cinza ajuda a adubar, é o único jeito que eu conheço de conseguir plantar nesse solo, mas se esgota em 2 a 3 colheitas. Não gosto de queimar, mas não sei como utilizar melhor meu solo. 
 -> END
 
+=== veredito_errado ===
+Oops! That’s not quite right. Mr. Jonas's problem isn't related to nutrient loss or erosion from floods. The satellite data shows his crops are thirsty in very specific strips, even though the ground is wet. 
+The issue lies with how the water is being delivered. That's why Smart Irrigation is the best solution.
+-> END
+
+=== veredito_certo ===
+Exactly right! The satellite images pinpointed the problem: the plants in the weak corridors are thirsty due to a loss of pressure in the irrigation system. 
+Smart Irrigation solves this hydraulic engineering issue by replacing the sprinklers at the end of the line with models designed to work efficiently with low pressure. 
+This ensures that every plant receives the correct amount of water, eliminating the weak strips and maximizing the entire harvest.
+-> END
+
 
 
 
