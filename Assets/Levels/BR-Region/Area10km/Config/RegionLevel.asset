@@ -1,0 +1,100 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 225c7a769a84453498493cb0f22a59f7, type: 3}
+  m_Name: RegionLevel
+  m_EditorClassIdentifier: Assembly-CSharp::RegionLevel
+  regionName: BR-Region
+  areaRef: Area10km
+  terrainData: {fileID: 15600000, guid: 4970bc70d0000d843b17df11d16d5332, type: 2}
+  terrainSizeMeters: {x: 63896.684, y: 1000, z: 63977.83}
+  rawNormalizedToHeight: 1
+  overlayGroups:
+  - groupName: Natural Color
+    icon: {fileID: 0}
+    layers:
+    - texture: {fileID: 2800000, guid: 0d28813fe475560479745d05238c9647, type: 3}
+      day: 1
+      month: 1
+      year: 2000
+    defaultLayerIndex: 0
+    legacyLayers: []
+  - groupName: Fire
+    icon: {fileID: 21300000, guid: a86bfe716c3411a4a80d13cd150fad2e, type: 3}
+    layers:
+    - texture: {fileID: 2800000, guid: a294b63117e7ef349ac187f10ee64555, type: 3}
+      day: 1
+      month: 5
+      year: 2000
+    - texture: {fileID: 2800000, guid: ddd875244a8baa7418c694396833f241, type: 3}
+      day: 1
+      month: 8
+      year: 2020
+    - texture: {fileID: 2800000, guid: 6f57c666b17aca74590fb8d6d7b70948, type: 3}
+      day: 1
+      month: 10
+      year: 2000
+    - texture: {fileID: 2800000, guid: 6bd65e8313939aa45b5f4482c04c5efc, type: 3}
+      day: 1
+      month: 5
+      year: 2021
+    - texture: {fileID: 2800000, guid: 679745aff0d2ab74fad700801bf96302, type: 3}
+      day: 1
+      month: 8
+      year: 2021
+    defaultLayerIndex: 0
+    legacyLayers: []
+  - groupName: NDVI
+    icon: {fileID: 21300000, guid: 024ae74f0ff0342499e703818b74ecef, type: 3}
+    layers:
+    - texture: {fileID: 2800000, guid: e877bffbea597d54ea77e32d6ae69dd1, type: 3}
+      day: 1
+      month: 5
+      year: 2020
+    - texture: {fileID: 2800000, guid: 69e1280577cdba643acbfa7194bd4e04, type: 3}
+      day: 1
+      month: 8
+      year: 2020
+    - texture: {fileID: 2800000, guid: 7eeaaa5c8b79a114e986382d3d8a9e7c, type: 3}
+      day: 1
+      month: 10
+      year: 2020
+    - texture: {fileID: 2800000, guid: 1773cb61b04544f4aadc75c1cbbd3756, type: 3}
+      day: 1
+      month: 5
+      year: 2021
+    - texture: {fileID: 2800000, guid: 1ed355fac2e23174484cd720435aab22, type: 3}
+      day: 1
+      month: 5
+      year: 2022
+    - texture: {fileID: 2800000, guid: acaac30a07f66244e8e4a1b323fce2a5, type: 3}
+      day: 1
+      month: 8
+      year: 2022
+    - texture: {fileID: 2800000, guid: 50a9ee4b2c2f76943b00b6462b872456, type: 3}
+      day: 1
+      month: 10
+      year: 2022
+    defaultLayerIndex: 0
+    legacyLayers: []
+  defaultGroupIndex: 0
+  overlaysLegacy: []
+  defaultOverlayIndexLegacy: 0
+  overlayTilingMeters: {x: 63896.684, y: 63977.83}
+  mapMarkers:
+  - displayName: Farm
+    normalizedX: 0.5
+    normalizedZ: 0.5
+    heightOffsetMeters: 1500
+    icon: {fileID: 21300000, guid: 8af1b59e3001ac3419a5dddb5bebb001, type: 3}
+    worldSizeMeters: {x: 3000, y: 3000}
+  zMinMeters: 0
+  zMaxMeters: 1000

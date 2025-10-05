@@ -1,0 +1,4 @@
+repository "Fazenda/Fazenda@4673352859113@cloud"
+  path "/"
+    br "/main"
+    co "/main"
