@@ -2,8 +2,8 @@
 // 1. Variável para o estado geral da fase (controlada pelo C#)
 VAR fase_status = "Inicio" 
 // 2. Variáveis booleanas para cada descoberta (controladas pelo C#)
-VAR encontrou_vegetacao = true
-VAR encontrou_fogo = true
+VAR encontrou_vegetacao = false
+VAR encontrou_fogo = false
 
 === Fazendeiro ===
 
@@ -42,6 +42,7 @@ Seu Arlindo, eu posso te ajudar! Se o senhor me permitir, eu gostaria de dar uma
 = andamento
 #speaker: Fazendeiro
 E então? O que o bicho lá de cima disse?
++ Ainda não encontrei nada. -> END
 + {encontrou_vegetacao} > Falar sobre a diferença da vegetação nos meses de maio, julho e agosto. 
 -> dialogo_vegetacao
 + {encontrou_fogo} > Falar sobre a diferença dos focos de calor nos meses de maio, julho e agosto. -> dialogo_fogo
