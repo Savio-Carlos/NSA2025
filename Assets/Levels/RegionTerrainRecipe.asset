@@ -12,43 +12,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae69778ce4bb42b2a9852c1f1225c1e2, type: 3}
   m_Name: RegionTerrainRecipe
   m_EditorClassIdentifier: Assembly-CSharp::RegionTerrainRecipe
-  rawFile: {fileID: 102900000, guid: 1fd3756c23d585e7da41c2e652319a22, type: 3}
+  rawFile: {fileID: 102900000, guid: 72169abf21657609da977148d06ad1ca, type: 3}
   heightmapWidth: 2049
   heightmapHeight: 2049
   bitDepth: 16
   bigEndian: 0
-  flipVertically: 0
+  flipVertically: 1
   terrainSizeMetersXZ: {x: 63896.684, y: 63977.83}
   maxTerrainHeightMeters: 1000
-  regionName: BR-Region-Fase2
+  regionName: BR-Region-Fase3
   areaRef: Area10km
   overlayTilingMeters: {x: 63896.684, y: 63977.83}
   overlayGroups:
   - groupName: Natural Color
     icon: {fileID: 0}
     layers:
-    - texture: {fileID: 2800000, guid: c313d5a2068915bcfaf7a227dc71923f, type: 3}
+    - texture: {fileID: 2800000, guid: 415b854dc6c4a5e4c94c388e1c6037cd, type: 3}
       day: 1
-      month: 1
-      year: 2000
+      month: 6
+      year: 2022
     defaultLayerIndex: 0
     legacyLayers:
     - {fileID: 0}
-  - groupName: Flood
-    icon: {fileID: 21300000, guid: e018ccc06880a2c9bb7bbddadc5031e7, type: 3}
+  - groupName: Soil Moisturea
+    icon: {fileID: 21300000, guid: 0ff3fb6199b6d1ade897b0aafec30dc4, type: 3}
     layers:
-    - texture: {fileID: 2800000, guid: 8d66a0823c91950f18723200993bf824, type: 3}
+    - texture: {fileID: 2800000, guid: f6a0a6b669a0a9f4ea7afeaa8558094c, type: 3}
       day: 1
       month: 6
-      year: 2024
-    - texture: {fileID: 2800000, guid: 2a532a18560e062538710fbcb24a2652, type: 3}
-      day: 1
-      month: 5
-      year: 2024
-    - texture: {fileID: 2800000, guid: d343ac8bf912c66c3820a79022a95e95, type: 3}
-      day: 1
-      month: 5
-      year: 2025
+      year: 2022
     defaultLayerIndex: 0
     legacyLayers:
     - {fileID: 0}
@@ -59,18 +51,10 @@ MonoBehaviour:
   - groupName: NDVI
     icon: {fileID: 21300000, guid: 024ae74f0ff0342499e703818b74ecef, type: 3}
     layers:
-    - texture: {fileID: 2800000, guid: f6c8641c7a6ed37b6880d0c794f50a4a, type: 3}
+    - texture: {fileID: 2800000, guid: 0da5096fc46260d4083d8f602336ef17, type: 3}
       day: 1
       month: 6
-      year: 2024
-    - texture: {fileID: 2800000, guid: 1185c6b78eb4e493d92f8d48dad68943, type: 3}
-      day: 1
-      month: 5
-      year: 2024
-    - texture: {fileID: 2800000, guid: c4a0fb51c2bce3cbfab8602a5e0b4f76, type: 3}
-      day: 1
-      month: 5
-      year: 2025
+      year: 2022
     defaultLayerIndex: 0
     legacyLayers:
     - {fileID: 0}
