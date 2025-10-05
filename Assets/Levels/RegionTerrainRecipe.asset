@@ -12,15 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae69778ce4bb42b2a9852c1f1225c1e2, type: 3}
   m_Name: RegionTerrainRecipe
   m_EditorClassIdentifier: Assembly-CSharp::RegionTerrainRecipe
-  rawFile: {fileID: 102900000, guid: 1fd3756c23d585e7da41c2e652319a22, type: 3}
+  rawFile: {fileID: 102900000, guid: 72169abf21657609da977148d06ad1ca, type: 3}
   heightmapWidth: 2049
   heightmapHeight: 2049
   bitDepth: 16
   bigEndian: 0
-  flipVertically: 0
+  flipVertically: 1
   terrainSizeMetersXZ: {x: 63896.684, y: 63977.83}
   maxTerrainHeightMeters: 1000
-  regionName: BR-Region-Fase2
+  regionName: BR-Region-Fase3
   areaRef: Area10km
   overlayTilingMeters: {x: 63896.684, y: 63977.83}
   overlayGroups:
@@ -63,14 +63,6 @@ MonoBehaviour:
       day: 1
       month: 6
       year: 2024
-    - texture: {fileID: 2800000, guid: 1185c6b78eb4e493d92f8d48dad68943, type: 3}
-      day: 1
-      month: 5
-      year: 2024
-    - texture: {fileID: 2800000, guid: c4a0fb51c2bce3cbfab8602a5e0b4f76, type: 3}
-      day: 1
-      month: 5
-      year: 2025
     defaultLayerIndex: 0
     legacyLayers:
     - {fileID: 0}
