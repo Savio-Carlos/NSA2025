@@ -1090,7 +1090,8 @@ MeshRenderer:
   m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
-  m_Materials: []
+  m_Materials:
+  - {fileID: 2100000, guid: 0b03f59f875661b4fa82fa6e8a57cfb6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1158,7 +1159,7 @@ MonoBehaviour:
   fatorClareamento: 0.3
   regiaoLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   regioesParent: {fileID: 1078221906}
   distanciaMaximaClique: 1
   nomesRegioes:
