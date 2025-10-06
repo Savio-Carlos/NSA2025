@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: da07d3a8853cd9c0385a522fbe87673c, type: 3}
-  m_Name: Fase1
+  m_Name: Fase2
   m_EditorClassIdentifier: 
-  nomeDaFase: Fase1
-  historiaInk: {fileID: 4900000, guid: a8a45563cfd126caa8f9565adb5abb85, type: 3}
+  nomeDaFase: Fase2
+  historiaInk: {fileID: 4900000, guid: d078533202f1d284fa5ce3ea1477f8ac, type: 3}
   nomesDasObservacoes:
   - vegetacao
-  - enchente
+  - umidade

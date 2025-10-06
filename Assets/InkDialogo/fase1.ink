@@ -2,9 +2,8 @@
 // 1. Variável para o estado geral da fase (controlada pelo C#)
 VAR fase_status = "Inicio" 
 // 2. Variáveis booleanas para cada descoberta (controladas pelo C#)
-VAR encontrou_vegetacao = true
-VAR encontrou_fogo = true
-VAR encontrou_enchente = true
+VAR encontrou_vegetacao = false
+VAR encontrou_enchente = false
 
 === Fazendeiro ===
 
@@ -20,72 +19,91 @@ VAR encontrou_enchente = true
 }
 
 = inicio
-# speaker: Inspetor 
-Bom dia, senhor. Sou o inspetor que você contratou. Essa é sua propriedade? É uma bela lavoura de arroz.
-#speaker: Fazendeiro
-Bom dia, sou o Lauro. Obrigado, eu me esforço bastante. A gente tenta, mas ultimamente tá difícil manter ela bonita. O rio não anda mais pra brincadeira. 
-# speaker: Inspetor 
-Imagino o trabalho para reconstruir depois da última enchente. Foi muito grave por aqui?
-#speaker: Fazendeiro
-Grave? A água passou por cima de tudo. Levou taipa, estragou bomba d'água, afogou a lavoura que estava quase no ponto de colher. Grave é pouco. Antigamente, a gente conhecia o rio, sabia até onde ele vinha na cheia. Agora, ele vem com uma fúria que nunca vi. Cada vez que o céu escurece, a gente já fica de orelha em pé.
+# speaker: Expert 
+Good morning, sir. I’m the Expert you called in. Are you Lauro, the rice farmer?
+#speaker: Lauro
+Good morning. Yes, I’m Lauro. Thank you for your visit! I’ve called you because, after what happened last year, it’s hard to feel confident. The river… it came like nothing I’ve ever seen. 
+# speaker: Expert 
+I can imagine. That flood was devastating. Did it destroy most of your crops?
+#speaker: Lauro
+It swept through everything. Walls, pumps, and rice almost ready to harvest were all gone. I’ve never seen the river move with such force. Whenever the clouds roll in, I can’t help but worry it might happen again.
 
-# speaker: Inspetor 
-E o que o senhor acha que mudou? É só o volume da chuva?
-#speaker: Fazendeiro
-A chuva vem um temporal, é verdade. Mas não é só isso. Parece que a terra não segura mais a água. A chuva bate e escorre direto pro rio, que vira um monstro em poucas horas. E quando ele sobe, não tem taipa que segure. A proteção da terra se foi.
-# speaker: Inspetor 
-Seu Lauro, talvez eu possa ajudar. Com as imagens de satélite que tenho aqui, podemos analisar como a água se comportou na sua propriedade e entender melhor os pontos vulneráveis. Se o senhor permitir, podemos olhar juntos.
-#speaker: Fazendeiro
-É claro! Tudo que puder me ajudar a não passar por aquele pesadelo de novo, eu quero ver.
+# speaker: Expert 
+It swept through everything. Walls, pumps, and rice almost ready to harvest were all gone. I’ve never seen the river move with such force. Whenever the clouds roll in, I can’t help but worry it might happen again.
+# speaker: Expert 
+Mr. Lauro, I might be able to help. With the satellite images I have here, we can analyze how the water behaved on your property and identify the vulnerable spots. If you allow me, we can look at them together.
+#speaker: Lauro
+Of course! Anything that can help me avoid that nightmare again, I would like to see.
 -> END
 
 = andamento
-#speaker: Fazendeiro
-E então? O que o bicho lá de cima disse?
-+ {encontrou_vegetacao} > Mostrar a diferença de vegetação entre a lavoura e a margem do rio.
+#speaker: Lauro
+Then, do you have anything to say?
++ Not yet Mr.Lauro, i will come back when i find something. -> DONE
++ {encontrou_vegetacao} > Link the lack of native vegetation to the region's flood paths.
 -> dialogo_vegetacao
-+ {encontrou_fogo} > Comentar sobre a ausência de queimadas na área. -> dialogo_fogo
-+ {encontrou_enchente} > Falar sobre a mancha de inundação e como ela avançou.-> dialogo_enchente
++ {encontrou_enchente} > Talk about the flood footprint and how it advanced. -> dialogo_enchente
 // Esta escolha só aparece quando TODAS as observações forem verdadeiras
-* {encontrou_vegetacao and encontrou_fogo} > Conectar a falta de mata ciliar com o caminho da enchente e a vulnerabilidade da lavoura. -> dialogo_final
+* {encontrou_vegetacao and encontrou_enchente} > Connect the lack of native vegetation with the flood's destructive path. -> dialogo_final
 -> END
 
 = final
-#speaker: Fazendeiro
+#speaker: Lauro
 Obrigado pela ajuda bixo la de cima!
 -> END
 
 = generico 
-#speaker: Fazendeiro
+#speaker: Lauro
 Hmm, não tenho nada novo para te dizer agora.
 -> END
 
 === dialogo_vegetacao ===
-# speaker: Inspetor 
-Agora, cruzando com os mapas de vegetação, note algo interessante. Em maio, antes da enchente, sua lavoura estava saudável, com um verde forte. Mas nesta mesma faixa por onde a água avança, a vegetação nativa é muito rala, quase inexistente. Em junho, depois da enchente, essa área fica completamente "lavada". Por que essa beira de rio é tão desprotegida? 
-#speaker: Fazendeiro
-Essa terra na beira do rio sempre foi a mais fácil de trabalhar e boa de plantar. A gente sempre se manteve limpa pra aproveitar o máximo de espaço pra lavoura de arroz. Deixar o mato crescer ali sempre pareceu um desperdício.
+# speaker: Expert 
+And that makes perfect sense, Mr. Lauro. Because when we analyze the region's vegetation maps, we see a clear pattern: those very "paths" the water uses to advance with more force are, most of the time, areas on the riverbank with very weak or non-existent native vegetation. 
+# speaker: Expert 
+In contrast to the deep green of the crops, these strips look like fragile scars on the landscape. Would you say the riverbank around here is also like that, more "clear"?
+#speaker: Lauro
+Look, for us it's simple: every square meter counts. The land on the bank is fertile and gets water easily. Letting wild growth take over a piece of ground as good as that? It's like throwing money away. We clear it so we can plant and secure the harvest.
 -> END
 
 === dialogo_fogo ===
-# speaker: Inspetor 
+# speaker: Expert 
 Eu também verifiquei os registros de focos de calor e, como esperado para a sua cultura, não há praticamente nenhuma atividade de queimada na sua propriedade em nenhum dos anos. Seu manejo é todo baseado na água e no preparo mecânico do solo, correto?
-#speaker: Fazendeiro
+#speaker: Lauro
 Isso mesmo. Fogo aqui, só na churrasqueira. Na lavoura de arroz, a gente não usa fogo pra nada. O nosso trabalho é com a terra e com a água.
 -> END
 
 === dialogo_enchente ===
-# speaker: Inspetor 
-Seu Lauro, olhando as imagens da enchente de maio do ano passado e a simulação para este ano, vemos que a água não sobe de forma uniforme. Ela avança com mais força por essa faixa aqui, ao longo da margem, antes de se espalhar pelo resto da lavoura. É como se houvesse um caminho preferencial para a inundação. O senhor reconhece esse padrão?
-#speaker: Fazendeiro
-A água entra primeiro por ali, com uma força que parece um sangrador. É sempre o primeiro lugar onde as taipas estouram. A gente conserta, mas na cheia seguinte, a história se repete.
+# speaker: Expert 
+Mr. Lauro, looking at the images from last May's flood and the simulation for this year, we can see the water doesn't rise uniformly. 
+# speaker: Expert 
+It pushes forward with more force through this strip here, along the bank, before spreading to the rest of the fields. It's as if there's a preferential path for the flood. Do you recognize this pattern?
+#speaker: Lauro
+The water always comes in through there first, with a force like a bursting channel. It's always the first place where the levees break. We fix them, but in the next flood, it's the same story all over again.
 -> END
 
 === dialogo_final ===
-# speaker: Inspetor 
-Seu Lauro, acho que as imagens estão nos contando a história completa. Aquele "caminho preferencial" que a enchente usa para invadir sua lavoura é exatamente a área onde a mata ciliar foi removida. Essa mata nativa na beira do rio não é um desperdício; ela é a primeira linha de defesa. As raízes seguram o barranco e o solo, e a vegetação densa funciona como um quebra-mar, diminuindo a velocidade e a força da água. Sem ela, o rio sobe e avança sem nenhuma barreira, estourando suas taipas e destruindo a lavoura.
-#speaker: Fazendeiro
-(Ele olha para a margem "limpa" do rio, depois para as taipas recém-consertadas, pensativo) Capaz... A gente trabalhou tanto a vida toda pra manter essa beirada limpa, achando que tava fazendo o certo... E era justamente isso que tava deixando a porta aberta pro rio entrar? E o que eu posso fazer agora? Preciso proteger minha lavoura, mas sem perder minha área de plantio.
+# speaker: Expert 
+Mr. Lauro, I believe the images are telling us the whole story. That "preferential path" the flood uses to invade your fields is the exact same area where the riverside vegetation has been cleared. 
+# speaker: Expert 
+That native growth on the bank isn't a waste of space; it's your first line of defense. The roots hold the bank and soil together, and the dense plants act as a natural breakwater, slowing the water's speed and reducing its force. 
+# speaker: Expert 
+Without it, the river rushes in without any barrier, breaking your levees and destroying the crops.
+#speaker: Lauro
+(He looks at the "clear" riverbank, then at his newly repaired levees, thoughtfully) You don't say... We've worked our whole lives to keep this bank clear, thinking we were doing the right thing... 
+#speaker: Lauro
+And you're telling me that's what was leaving the door wide open for the river? So what can I do now? I need to protect my fields, but without losing my planting area.
+-> END
+
+=== veredito_certo ===
+    Excellent! Mr. Lauro's problem is the raw power of the river eroding his land and destroying his crops. Soil Bioengineering is the perfect solution because it uses a living defensive system of plants to create natural barriers. 
+    These "root walls" and "green breakwaters" will strengthen the riverbank and reduce the flood's force, protecting his levees and his rice fields for years to come.
+-> END
+
+=== veredito_errado ===
+Oops! That’s not quite right. While those are excellent techniques, Mr. Lauro's main problem isn't soil fertility or inefficient water distribution. 
+His farm is being physically destroyed by the force of the river during floods. He needs a solution that can protect his land from being washed away.
+
 -> END
 
 

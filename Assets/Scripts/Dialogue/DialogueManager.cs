@@ -104,9 +104,16 @@ public class DialogueManager : MonoBehaviour
 
     private void HandleObservacaoRegistrada(string nomeObservacao, bool valor)
     {
-        Debug.Log($"<color=green>DialogueManager RECEBEU o evento para: {nomeObservacao}</color>");
-        if (_inkDialogueVariables == null) return; // Segurança extra
+        // LOG DE VERIFICAÇÃO: Este log DEVE aparecer se a comunicação estiver funcionando.
+        Debug.Log($"<color=cyan>[DialogueManager] EVENTO RECEBIDO! Tentando atualizar variável Ink para a observação: {nomeObservacao}</color>");
+
+        if (_inkDialogueVariables == null) return;
+
         string nomeVariavelInk = $"encontrou_{nomeObservacao.ToLower()}";
+
+        // LOG DE VERIFICAÇÃO FINAL: Veja se o nome da variável está correto.
+        Debug.Log($"<color=cyan>[DialogueManager] Nome da variável Ink a ser atualizada: '{nomeVariavelInk}'</color>");
+
         _inkDialogueVariables.UpdateVariableState(nomeVariavelInk, new BoolValue(valor));
     }
 
@@ -121,6 +128,11 @@ public class DialogueManager : MonoBehaviour
         {
             Debug.Log("<color=cyan>Diálogo de início concluído! Mudando estado da fase para Andamento.</color>");
             FaseManager.instance.MudarEstado(FaseState.Andamento);
+        }
+            else if (FaseManager.instance.estadoAtual == FaseState.Andamento && FaseManager.instance.TodasObservacoesFeitas())
+        {
+            Debug.Log("<color=yellow>Diálogo final concluído! Mudando estado da fase para Finalizada.</color>");
+            FaseManager.instance.MudarEstado(FaseState.Finalizada);
         }
     }
 
