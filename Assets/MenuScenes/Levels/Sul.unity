@@ -469,6 +469,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 330585545}
+    - target: {fileID: 1989012754010887048, guid: dde717b20a0c85942b254cc6531af19f, type: 3}
+      propertyPath: m_SortingOrder
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 2219835140710479257, guid: dde717b20a0c85942b254cc6531af19f, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -560,6 +564,10 @@ PrefabInstance:
     - target: {fileID: 2399895154621148425, guid: dde717b20a0c85942b254cc6531af19f, type: 3}
       propertyPath: m_margin.z
       value: 63.341316
+      objectReference: {fileID: 0}
+    - target: {fileID: 3737339120859830351, guid: dde717b20a0c85942b254cc6531af19f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6343039982732993954, guid: dde717b20a0c85942b254cc6531af19f, type: 3}
       propertyPath: m_Sprite
@@ -1115,6 +1123,10 @@ PrefabInstance:
     - target: {fileID: 8262401549016425417, guid: b880a50dc13c7c6eba5ac5996fed20e9, type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 8262401549016425417, guid: b880a50dc13c7c6eba5ac5996fed20e9, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8805469626724472398, guid: b880a50dc13c7c6eba5ac5996fed20e9, type: 3}
       propertyPath: m_text

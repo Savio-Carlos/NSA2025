@@ -1,4 +1,4 @@
-// --- VARIÁVEIS DA FASE ---
+-- VARIÁVEIS DA FASE ---
 // 1. Variável para o estado geral da fase (controlada pelo C#)
 VAR fase_status = "Inicio" 
 // 2. Variáveis booleanas para cada descoberta (controladas pelo C#)
@@ -19,74 +19,85 @@ VAR encontrou_umidade = false
 }
 
 = inicio
-# speaker: Inspetor 
-Bom dia, senhor. Sou o inspetor que você contratou. Essa é sua propriedade? É uma bela lavoura de arroz.
-#speaker: Fazendeiro
-Bom dia, sou o Lauro. Obrigado, eu me esforço bastante. A gente tenta, mas ultimamente tá difícil manter ela bonita. O rio não anda mais pra brincadeira. 
-# speaker: Inspetor 
-Imagino o trabalho para reconstruir depois da última enchente. Foi muito grave por aqui?
-#speaker: Fazendeiro
-Grave? A água passou por cima de tudo. Levou taipa, estragou bomba d'água, afogou a lavoura que estava quase no ponto de colher. Grave é pouco. Antigamente, a gente conhecia o rio, sabia até onde ele vinha na cheia. Agora, ele vem com uma fúria que nunca vi. Cada vez que o céu escurece, a gente já fica de orelha em pé.
+# speaker: Expert 
+Good morning, Mr. Jonas. I'm here as we discussed.
+#speaker: Jonas
+Good morning. Thanks for coming here. The fields look fine from a distance, but up close, the problem is still here.
+# speaker: Expert 
+You mentioned on the phone you were dealing with some “patches” of low productivity, 
+even with the irrigation. Could you show me? 
+#speaker: Jonas
+Yes, that’s right. They’re not exactly patche , more like strips or corridors. The center pivot spreads water evenly, we use top-quality fertilizer, the seed is all the same… but in those strips, the plants just fail to thrive. I’ve tried everything.
 
-# speaker: Inspetor 
-E o que o senhor acha que mudou? É só o volume da chuva?
-#speaker: Fazendeiro
-A chuva vem um temporal, é verdade. Mas não é só isso. Parece que a terra não segura mais a água. A chuva bate e escorre direto pro rio, que vira um monstro em poucas horas. E quando ele sobe, não tem taipa que segure. A proteção da terra se foi.
-# speaker: Inspetor 
-Seu Lauro, talvez eu possa ajudar. Com as imagens de satélite que tenho aqui, podemos analisar como a água se comportou na sua propriedade e entender melhor os pontos vulneráveis. Se o senhor permitir, podemos olhar juntos.
-#speaker: Fazendeiro
-É claro! Tudo que puder me ajudar a não passar por aquele pesadelo de novo, eu quero ver.
+# speaker: Expert 
+I understand your frustration, Mr. Jonas. Sometimes the problem isn’t what’s on the plant, but how the plant is interacting with the soil. 
+# speaker: Expert 
+That’s what this technology is for. We’re going to use satellite imagery to take an “x-ray” and understand what’s really happening beneath the surface. 
+#speaker: Jonas
+Perfect. Show me what you’ve got. 
 -> END
 
 = andamento
-#speaker: Fazendeiro
-E então? O que o bicho lá de cima disse?
-+ Ainda não encontrei nada senhor. -> DONE
-+ {encontrou_vegetacao} > Mostrar a diferença de vegetação entre a lavoura e a margem do rio.
+#speaker: Jonas
+What’s up? 
++ Not yet Mr.Jonas, I will come back when I find something. -> DONE
++ {encontrou_vegetacao} > Confirme the low-productivity areas with the vegetation map.
 -> dialogo_vegetacao
-+ {encontrou_umidade} > Falar sobre a mancha de inundação e como ela avançou.-> dialogo_umidade
++ {encontrou_umidade} > Check if the weak areas are under water stress. -> dialogo_umidade
 // Esta escolha só aparece quando TODAS as observações forem verdadeiras
-* {encontrou_vegetacao and encontrou_umidade} > Conectar a falta de mata ciliar com o caminho da enchente e a vulnerabilidade da lavoura. -> dialogo_final
+* {encontrou_vegetacao and encontrou_umidade} > Connect the weak areas with pressure loss in the irrigation system. -> dialogo_final
 -> END
 
 = final
-#speaker: Fazendeiro
-Obrigado pela ajuda bixo la de cima!
+#speaker: Jonas
+Thank you for the help!
 -> END
 
 = generico 
-#speaker: Fazendeiro
-Hmm, não tenho nada novo para te dizer agora.
+#speaker: Jonas
+Hmmm, I don’t have nothing new to say right now…
 -> END
 
 === dialogo_vegetacao ===
-# speaker: Inspetor 
-Agora, cruzando com os mapas de vegetação, note algo interessante. Em maio, antes da enchente, sua lavoura estava saudável, com um verde forte. Mas nesta mesma faixa por onde a água avança, a vegetação nativa é muito rala, quase inexistente. Em junho, depois da enchente, essa área fica completamente "lavada". Por que essa beira de rio é tão desprotegida? 
-#speaker: Fazendeiro
-Essa terra na beira do rio sempre foi a mais fácil de trabalhar e boa de plantar. A gente sempre se manteve limpa pra aproveitar o máximo de espaço pra lavoura de arroz. Deixar o mato crescer ali sempre pareceu um desperdício.
--> END
-
-=== dialogo_fogo ===
-# speaker: Inspetor 
-Eu também verifiquei os registros de focos de calor e, como esperado para a sua cultura, não há praticamente nenhuma atividade de queimada na sua propriedade em nenhum dos anos. Seu manejo é todo baseado na água e no preparo mecânico do solo, correto?
-#speaker: Fazendeiro
-Isso mesmo. Fogo aqui, só na churrasqueira. Na lavoura de arroz, a gente não usa fogo pra nada. O nosso trabalho é com a terra e com a água.
+# speaker: Expert 
+Mr. Jonas, the satellite confirms exactly what you said. Look here at the crop health ma : we have these areas in dark green, which are very healthy, but right in the middle of them, we have these strips in light green, almost yellow. 
+# speaker: Expert 
+The pattern isn’t random; it seems to form corridors. Do you recognize these paths?
+# speaker: Jonas
+Of course I recognize them! Those strips are where the plants don’t thrive. You can see it clearly from above. I wonder why that happens.
 -> END
 
 === dialogo_umidade ===
-# speaker: Inspetor 
-Seu Lauro, olhando as imagens da enchente de maio do ano passado e a simulação para este ano, vemos que a água não sobe de forma uniforme. Ela avança com mais força por essa faixa aqui, ao longo da margem, antes de se espalhar pelo resto da lavoura. É como se houvesse um caminho preferencial para a inundação. O senhor reconhece esse padrão?
-#speaker: Fazendeiro
-A água entra primeiro por ali, com uma força que parece um sangrador. É sempre o primeiro lugar onde as taipas estouram. A gente conserta, mas na cheia seguinte, a história se repete.
+# speaker: Expert 
+Now, here’s the most intriguing part. This other map measures the moisture in the plants. The areas that were weak on the previous map are the same ones that appear in red here. 
+# speaker: Expert 
+This means that even with the pivot irrigator running, the plants in these corridors are thirsty; they aren’t managing to absorb the water properly. 
+
+# speaker: Jonas
+Thirsty? But I run the pivot every day! The water is there, I can see the ground is wet. How can the plants be thirsty with damp soil?
 -> END
 
 === dialogo_final ===
-# speaker: Inspetor 
-Seu Lauro, acho que as imagens estão nos contando a história completa. Aquele "caminho preferencial" que a enchente usa para invadir sua lavoura é exatamente a área onde a mata ciliar foi removida. Essa mata nativa na beira do rio não é um desperdício; ela é a primeira linha de defesa. As raízes seguram o barranco e o solo, e a vegetação densa funciona como um quebra-mar, diminuindo a velocidade e a força da água. Sem ela, o rio sobe e avança sem nenhuma barreira, estourando suas taipas e destruindo a lavoura.
-#speaker: Fazendeiro
-(Ele olha para a margem "limpa" do rio, depois para as taipas recém-consertadas, pensativo) Capaz... A gente trabalhou tanto a vida toda pra manter essa beirada limpa, achando que tava fazendo o certo... E era justamente isso que tava deixando a porta aberta pro rio entrar? E o que eu posso fazer agora? Preciso proteger minha lavoura, mas sem perder minha área de plantio.
+# speaker: Expert 
+Mr.Jonas, I believe the mystery is solved, and the answer was combining the satellite maps with your farm’s design. The strips where your plants are thirsty are the ones farthest from the water pump. 
+# speaker: Expert 
+In a large irrigation system like yours, it’s common to have pressure loss along the pipeline. They wet the surface, that’s why you see damp soil, but the water application rate is insufficient to penetrate the soil and meet the crop’s needs. 
+# speaker: Expert 
+Your problem isn’t with fertility; it’s with hydraulic engineering. 
+
+# speaker: Jonas
+You mean the water pressure gets weak by the end of the line? Wow, we calibrate the nozzles, but you never think about the pressure water loses along the way… 
+# speaker: Jonas
+That’s why the crop starts strong and ends weak. And this… can it be fixed? Is it possible to get more pressure into this system? 
 -> END
 
+=== veredito_certo ===
+Exactly right! The satellite images pinpointed the problem: the plants in the weak  corridorsare thirsty due to a loss of pressure in the irrigation system. 
+Smart irrigation solves this hydraulic engineering issue by replacing the sprinklers at the end of the line with models designed to work efficiently with low pressure. 
+This ensures that every plant receives the correct amount of water, eliminating the weak strips and maximizing the entire harvest.  
+-> END
 
-
-
+=== veredito_errado ===
+Oops! That’s not quite right. Mr. Jonas’s problem isn’t related to nutrient loss or erosion from floods. The satellite data shows his crops are thirsty in very specific strips, even though the ground is wet.
+The issue lies with how the water is being delivered. That’s why Smart Irrigation is the best solution.
+-> END
