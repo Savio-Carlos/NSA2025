@@ -66,5 +66,5 @@
     "explorer.fileNesting.patterns": {
         "*.sln": "*.csproj"
     },
-    "dotnet.defaultSolution": "Fazenda.sln"
+    "dotnet.defaultSolution": "NSA2025.sln"
 }

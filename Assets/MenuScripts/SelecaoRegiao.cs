@@ -72,7 +72,7 @@ public class SelecaoRegiao : MonoBehaviour
 
                 // Verifica se o objeto clicado é um dos nomes de fase válidos
                 if (nomeObjeto.Equals("Norte Nordeste") ||
-                    nomeObjeto.Equals("Centro Oeste Sudeste") ||
+                    nomeObjeto.Equals("Centro Oeste") ||
                     nomeObjeto.Equals("Sul"))
                 {
                     if (novoRenderer != null)

@@ -27,7 +27,7 @@ public class SelecaoRegiaoRaycast : MonoBehaviour
     public float distanciaMaximaClique = 1.0f;
 
     [Header("Nomes válidos (opcional)")]
-    public string[] nomesRegioes = new string[] { "Norte Nordeste", "Centro Oeste Sudeste", "Sul" };
+    public string[] nomesRegioes = new string[] { "Norte Nordeste", "Centro Oeste", "Sul" };
 
     [Header("Mapa de nomes para exibição")]
     [Tooltip("Mapeie o nome do objeto/scene (chave) para o nome exibido (exibição).")]

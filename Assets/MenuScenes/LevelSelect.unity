@@ -132,7 +132,7 @@ GameObject:
   - component: {fileID: 115076639}
   - component: {fileID: 115076641}
   m_Layer: 6
-  m_Name: Centro Oeste Sudeste
+  m_Name: Centro Oeste
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1164,12 +1164,12 @@ MonoBehaviour:
   distanciaMaximaClique: 1
   nomesRegioes:
   - Norte Nordeste
-  - Centro Oeste Sudeste
+  - Centro Oeste
   - Sul
   mapaNomes:
   - chave: Norte Nordeste
     exibicao: Bioma Amazonico
-  - chave: Centro Oeste Sudeste
+  - chave: Centro Oeste
     exibicao: Regiao do Cerrado
   - chave: Sul
     exibicao: Mata Atlantica

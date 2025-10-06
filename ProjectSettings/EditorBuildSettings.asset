@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/MenuScenes/FilterShow.unity
     guid: cab1c9f145bd1a2babddbb245a4fc2eb
   - enabled: 1
+    path: Assets/MenuScenes/LevelSelect.unity
+    guid: ded9d2f960d00f844993022088acf005
+  - enabled: 0
     path: Assets/MenuScenes/LevelSelection.unity
     guid: 55674728f0cd71946b85f5047403172f
   - enabled: 1

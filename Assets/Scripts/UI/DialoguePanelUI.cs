@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Ink.Runtime;
 using System;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class DialoguePanelUI : MonoBehaviour
 {
@@ -19,6 +20,46 @@ public class DialoguePanelUI : MonoBehaviour
     [SerializeField] private GameObject _choicesParent;
     [SerializeField] private DialogueChoiceButton[] _choiceButtons; 
 
+  // make sure this is at the top
+
+private void Update()
+{
+    // Only react if the dialogue panel is on screen
+    if (_dialoguePanel == null || !_dialoguePanel.activeInHierarchy) return;
+
+    if (Input.GetKeyDown(KeyCode.Space))
+    {
+        // If choices are visible, "click" the selected (or first) choice
+        if (_choicesParent != null && _choicesParent.activeInHierarchy)
+        {
+            GameObject sel = EventSystem.current != null ? EventSystem.current.currentSelectedGameObject : null;
+            if (sel != null && sel.TryGetComponent<Button>(out var selBtn))
+            {
+                selBtn.onClick.Invoke();
+            }
+            else
+            {
+                // Fallback: click the first active choice button
+                foreach (var b in _choiceButtons)
+                {
+                    if (b != null && b.gameObject.activeInHierarchy &&
+                        b.TryGetComponent<Button>(out var btn))
+                    {
+                        btn.onClick.Invoke();
+                        break;
+                    }
+                }
+            }
+        }
+        // Otherwise, behave like your Continue button
+        else if (_continueButton != null &&
+                 _continueButton.gameObject.activeInHierarchy &&
+                 _continueButton.interactable)
+        {
+            _continueButton.onClick.Invoke();
+        }
+    }
+}
 
 
     private void OnEnable()

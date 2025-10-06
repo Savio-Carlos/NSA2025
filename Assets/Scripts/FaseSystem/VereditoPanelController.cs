@@ -109,7 +109,7 @@ public class VereditoPanelController : MonoBehaviour
             Debug.Log("Veredito concluído. Retornando ao seletor de níveis...");
 
             // ATUALIZE ESTA LINHA
-            SceneManager.LoadScene("LevelSelector"); 
+            SceneManager.LoadScene("LevelSelect"); 
         }
 
         // Se a condição acima for falsa, significa que era um diálogo normal da fase.
